@@ -1,0 +1,29 @@
+sudo apt-get install git
+
+git --version 命令查看版本
+
+使用 git clone + [仓库地址] 命令，克隆我们在 GitHub 上创建的仓库
+
+进入仓库主目录，执行 git status 查看整个仓库的状态
+
+git add [文件名]，新增文件添加到暂存区，以备提交
+可以使用 git add . 命令全部添加到暂存区
+
+执行 git reset -- [文件名] 或者 git rm --cached [文件名] 命令即可
+git reset -- 即可把暂存区的全部修改撤销
+
+git diff，它可以用来查看工作区被跟踪的文件的修改详情.此时会跳到新的页面，即工作区修改详情页，按 Q 退出此页面
+git diff --cached 查看暂存区的全部修改
+
+git config --global user.email "a634318935@126.com"
+git config --global user.name "lunhuidaozhu"
+git config -l 可以查看配置信息
+
+git commit 命令把暂存区的修改提交到版本区，生成一个新的版本
+
+git log，它用来查看版本区的提交历史记录
+git log [分支名] 查看某分支的提交历史，不写分支名查看当前所在分支
+git log --oneline 一行显示提交历史
+git log -n 其中 n 是数字，查看最近 n 个提交
+git log --author [贡献者名字] 查看指定贡献者的提交记录
+git log --graph 图示法显示提交历史
