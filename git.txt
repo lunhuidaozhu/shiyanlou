@@ -9,8 +9,10 @@ git --version 命令查看版本
 git add [文件名]，新增文件添加到暂存区，以备提交
 可以使用 git add . 命令全部添加到暂存区
 
-执行 git reset -- [文件名] 或者 git rm --cached [文件名] 命令即可
+git reset -- [文件名] 或者 git rm --cached [文件名] ，撤销暂存区的修改
 git reset -- 即可把暂存区的全部修改撤销
+git reset --soft HEAD^ 撤销最近的一次提交，将修改还原到暂存区。HEAD^ 表示撤销一次提交，HEAD^^ 表示撤销两次提交，撤销 n 次可以简写为 HEAD~n
+git reset --hard [版本号]
 
 git diff，它可以用来查看工作区被跟踪的文件的修改详情.此时会跳到新的页面，即工作区修改详情页，按 Q 退出此页面
 git diff --cached 查看暂存区的全部修改
@@ -19,11 +21,19 @@ git config --global user.email "a634318935@126.com"
 git config --global user.name "lunhuidaozhu"
 git config -l 可以查看配置信息
 
-git commit 命令把暂存区的修改提交到版本区，生成一个新的版本
+git commit -m，命令把暂存区的修改提交到版本区，生成一个新的版本，一个必须的选项 -m 用来提供该提交的备注
 
 git log，它用来查看版本区的提交历史记录
+git log --reverse，它用来查看全部分支信息，查看时间正序排列的信息
 git log [分支名] 查看某分支的提交历史，不写分支名查看当前所在分支
 git log --oneline 一行显示提交历史
 git log -n 其中 n 是数字，查看最近 n 个提交
 git log --author [贡献者名字] 查看指定贡献者的提交记录
 git log --graph 图示法显示提交历史
+
+git branch -avv，它用来查看全部分支信息
+
+git reflog 命令，显示本地仓库所有分支的每一次版本变化。
+
+git push，此命令会把本地仓库 master 分支上的新增提交推送到远程仓库的同名分支上
+git push -f，强制覆盖 
